@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:15:59 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:15:59 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:41:40 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:41:40 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
-		while (*s)
-			ft_putchar_fd(*s++, fd);
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

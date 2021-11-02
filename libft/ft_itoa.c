@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:07:42 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:07:42 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:35:29 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:44:45 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,14 @@ static void	ft_strrev(char *s)
 	char	*left;
 	char	tmp;
 
-	if (s)
+	left = s;
+	while (*s)
+		s++;
+	while (left < --s)
 	{
-		left = s;
-		while (*s)
-			s++;
-		while (left < --s)
-		{
-			tmp = *left;
-			*left++ = *s;
-			*s = tmp;
-		}
+		tmp = *left;
+		*left++ = *s;
+		*s = tmp;
 	}
 }
 
@@ -63,20 +60,19 @@ char	*ft_itoa(int nbr)
 	sign = ft_get_numsign(nbr);
 	len = ft_get_numlen(nbr);
 	str = (char *)ft_calloc((len + 1), sizeof(char));
-	if (str)
+	if (!str)
+		return (NULL);
+	pos = 0;
+	while (nbr)
 	{
-		pos = 0;
-		while (nbr)
-		{
-			str[pos++] = sign * (nbr % 10) + '0';
-			nbr /= 10;
-		}
-		if (!(nbr || pos))
-			str[pos++] = '0';
-		if (sign < 0)
-			str[pos++] = '-';
-		str[pos] = '\0';
-		ft_strrev(str);
+		str[pos++] = sign * (nbr % 10) + '0';
+		nbr /= 10;
 	}
+	if (!(nbr || pos))
+		str[pos++] = '0';
+	if (sign < 0)
+		str[pos++] = '-';
+	str[pos] = '\0';
+	ft_strrev(str);
 	return (str);
 }

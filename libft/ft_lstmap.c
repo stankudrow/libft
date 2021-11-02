@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:09:48 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:09:49 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:39:31 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:39:32 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 
 	newlst = NULL;
-	if (lst && f)
+	while (lst)
 	{
-		while (lst)
+		node = ft_lstnew((*f)(lst->content));
+		if (!node)
 		{
-			node = ft_lstnew((*f)(lst->content));
-			if (!node)
-			{
-				ft_lstclear(&newlst, del);
-				return (NULL);
-			}
-			ft_lstadd_back(&newlst, node);
-			lst = lst->next;
+			ft_lstclear(&newlst, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&newlst, node);
+		lst = lst->next;
 	}
 	return (newlst);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:09:28 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:09:28 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:38:27 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:38:27 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst && del)
-	{
-		(*del)(lst->content);
-		free(lst);
-	}
+	(*del)(lst->content);
+	free(lst);
 }

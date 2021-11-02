@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:09:03 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:09:03 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:37:10 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:37:11 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new)
-	{
-		if (*lst)
-			new->next = *lst;
-		*lst = new;
-	}
+	if (*lst)
+		new->next = *lst;
+	*lst = new;
 }

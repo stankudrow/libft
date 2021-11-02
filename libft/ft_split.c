@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:16:09 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:16:10 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 22:42:47 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 22:42:47 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,25 @@ static char	*ft_wordnew(char const *str, unsigned int *start, char sep)
 {
 	size_t	len;
 
-	if (str)
+	while (str[*start] && str[*start] == sep)
+		(*start)++;
+	len = 0;
+	while (str[*start] && str[*start] != sep)
 	{
-		while (str[*start] && str[*start] == sep)
-			(*start)++;
-		len = 0;
-		while (str[*start] && str[*start] != sep)
-		{
-			(*start)++;
-			len++;
-		}
-		return (ft_substr(str, *start - len, len));
+		(*start)++;
+		len++;
 	}
-	return (NULL);
+	return (ft_substr(str, *start - len, len));
 }
 
 static void	ft_free_words(char **strs, size_t nwords)
 {
 	size_t	iword;
 
-	if (strs)
-	{
-		iword = 0;
-		while (iword < nwords)
-			free(strs[iword++]);
-		free(strs);
-	}
+	iword = 0;
+	while (iword < nwords)
+		free(strs[iword++]);
+	free(strs);
 }
 
 char	**ft_split(char const *s, char c)

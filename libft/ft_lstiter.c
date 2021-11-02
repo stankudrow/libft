@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:09:34 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:09:34 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/02 23:00:35 by stanis            #+#    #+#             */
+/*   Updated: 2021/11/02 23:00:36 by stanis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst && f)
+	while (lst)
 	{
-		while (lst)
-		{
-			(*f)(lst->content);
-			lst = lst->next;
-		}
+		(*f)(lst->content);
+		lst = lst->next;
 	}
 }
