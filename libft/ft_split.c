@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
+/*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 22:42:47 by stanis            #+#    #+#             */
-/*   Updated: 2021/11/02 22:42:47 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/03 22:10:32 by stanislav         #+#    #+#             */
+/*   Updated: 2021/11/03 22:10:32 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ static char	*ft_wordnew(char const *str, unsigned int *start, char sep)
 	return (ft_substr(str, *start - len, len));
 }
 
-static void	ft_free_words(char **strs, size_t nwords)
+static void	ft_free_words(char **strs, size_t iword)
 {
-	size_t	iword;
+	size_t	iw;
 
-	iword = 0;
-	while (iword < nwords)
-		free(strs[iword++]);
+	iw = 0;
+	while (iw < iword)
+		free(strs[iw++]);
 	free(strs);
 }
 
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		words[iword] = ft_wordnew(s, &start, c);
 		if (!words[iword])
 		{
-			ft_free_words(words, iword + 1);
+			ft_free_words(words, iword);
 			return (NULL);
 		}
 	}

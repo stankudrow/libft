@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
+/*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 23:36:52 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 23:36:52 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/03 22:29:20 by stanislav         #+#    #+#             */
+/*   Updated: 2021/11/03 22:29:20 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ int		ft_toupper(int c);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
-/*
-** the additional section
-*/
+// the additional section
 
 char	*ft_itoa(int n);
 
@@ -64,13 +62,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-/*
-** end of the additional section
-*/
+// end of the additional section
 
-/*
-** the bonus section
-*/
+// the bonus section
 
 typedef struct s_list
 {
@@ -88,8 +82,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
-/*
-** end of the bonus section
-*/
+// end of the bonus section
 
 #endif

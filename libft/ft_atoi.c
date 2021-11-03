@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stanis <student.21-school.ru>              +#+  +:+       +#+        */
+/*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 22:06:07 by stanis            #+#    #+#             */
-/*   Updated: 2021/10/28 22:06:14 by stanis           ###   ########.fr       */
+/*   Created: 2021/11/03 22:26:19 by stanislav         #+#    #+#             */
+/*   Updated: 2021/11/03 22:26:33 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void	ft_skip(const char **nptr, short int *sign)
 		(*nptr)++;
 }
 
+// not cross-platform
 int	ft_atoi(const char *nptr)
 {
 	long	nbr;
