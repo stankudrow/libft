@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:10:32 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:10:32 by stanislav        ###   ########.fr       */
+/*   Updated: 2021/11/05 17:17:57 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ char	**ft_split(char const *s, char c)
 	size_t			iword;
 	unsigned int	start;
 
-	if (!s)
-		return (NULL);
 	wsc = ft_count_words(s, c);
 	words = (char **)ft_calloc(wsc + 1, sizeof(char *));
 	if (!words)
