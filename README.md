@@ -1,15 +1,34 @@
 # libft
 
-Первый проект основного обучения (42cursus) школы 42 (школы 21 в России). Описание заданий изложено в документе ***subject***. Некоторые функции намеренно сделаны незащищёнными и это правильный подход.
+Первый проект основного обучения (42cursus) школы 42 (школы 21 в России). Описание заданий изложено в документе ***subject***, который быть может нельзя выкладывать.
 
-The initial project of the main course (42cursus) at school 42 (school 21 in Russia). The description of the prohect is set out in the ***subject*** document. Some functions are intentionally made "unsecured" and this is the correct approach.
+Некоторые функции намеренно сделаны незащищёнными и это можно считать правильным подходом. Хорошим примером может послужить функция strlen, которая выдаст segfault при подаче NULL. Подсказка: пустая строка ("") и NULL - это не одно и то же.
 
-Le projet initial du cours principal (42cursus) à l'école 42 (école 21 en Russie). La description du projet est présentée dans le document ***subject***. Certaines fonctions sont intentionnellement rendues "non sécurisées" et c'est la bonne approche.
 
-## Тестеры/Testers/Testeurs
+## Другие работы
+
+В помощь и на вдохновние:
+
+* https://github.com/rchallie/libft
+
+* https://github.com/vvarodi/libft_42
+
+* https://gitgud.io/varnaud/libft
+
+* https://gitlab.com/ranuytte/42_libft
+
+
+## Тестеры
+
+**Внимание**: ***тестеры пишут люди, в них могут быть ошибки и скорее так и есть***. Если вы проверяющий и видите ошибку от тестера, с вас не снимается задача обосновать проверяемому что это за ошибка и почему она происходит.
 
 * https://github.com/alelievr/libft-unit-test
 
 * https://github.com/Tripouille/libftTester
 
 * https://github.com/ska42/libft-war-machine
+
+
+## Послесловие
+
+Не будьте душнилами.
