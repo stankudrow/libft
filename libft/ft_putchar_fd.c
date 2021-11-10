@@ -6,10 +6,11 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:17:30 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:17:30 by stanislav        ###   ########.fr       */
+/*   Updated: 2021/11/11 01:51:56 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
