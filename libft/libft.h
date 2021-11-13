@@ -6,15 +6,15 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:29:20 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:29:20 by stanislav        ###   ########.fr       */
+/*   Updated: 2021/11/11 02:04:09 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef  LIBFT_H
 # define LIBFT_H
 
+// size_t and malloc
 # include <stdlib.h>
-# include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 
