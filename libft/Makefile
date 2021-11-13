@@ -44,7 +44,7 @@ fclean: clean
 re: fclean all
 
 so: bonus
-	$(CC) -shared -o $(LIBSO) -fPIC $(SRCS) $(SRCS_BONUS)
+	$(CC) -nostartfiles -shared -o $(LIBSO) -fPIC $(SRCS) $(SRCS_BONUS)
 
 bonus: $(NAME) $(OBJS_BONUS)
 	ar urs $(NAME) $(OBJS_BONUS)
