@@ -6,11 +6,23 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:11:25 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:11:25 by stanislav        ###   ########.fr       */
+/*   Updated: 2021/11/13 10:18:59 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_ismemoverflow(size_t len1, size_t len2)
+{
+	size_t	max;
+
+	max = -1;
+	if ((len1 > max - 1) || (len2 > max - 1))
+		return (1);
+	if (max - (len1 + 1) < len2)
+		return (1);
+	return (0);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -20,6 +32,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
+	if (ft_ismemoverflow(len1, len2))
+		return (NULL);
 	str = (char *)ft_calloc(len1 + len2 + 1, sizeof(char));
 	if (str)
 	{

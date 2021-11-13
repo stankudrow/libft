@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:13:38 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:13:38 by stanislav        ###   ########.fr       */
+/*   Updated: 2021/11/13 10:36:22 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	slen;
+	size_t	max;
 
+	max = -1;
 	slen = ft_strlen(s);
 	if (start < slen)
 	{
+		if (max - (size_t)start < len)
+			return (NULL);
 		if (slen > (start + len))
 			slen = start + len;
 		slen -= start;
