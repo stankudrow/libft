@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 22:26:19 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:26:33 by stanislav        ###   ########.fr       */
+/*   Created: 2021/12/12 01:00:42 by stanislav         #+#    #+#             */
+/*   Updated: 2021/12/12 01:00:43 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_isspace(int c)
 	return ((c > 8 && c < 14) || c == 32);
 }
 
-static void	ft_skip(const char **nptr, short int *sign)
+static void	ft_skip(const char **nptr, int *sign)
 {
 	while (ft_isspace(**nptr))
 		(*nptr)++;
@@ -31,11 +31,10 @@ static void	ft_skip(const char **nptr, short int *sign)
 		(*nptr)++;
 }
 
-// not cross-platform
 int	ft_atoi(const char *nptr)
 {
-	long	nbr;
-	short	sign;
+	int	nbr;
+	int	sign;
 
 	sign = 1;
 	nbr = 0;
@@ -43,6 +42,7 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(*nptr))
 	{
 		if ((10 * nbr + (*nptr - '0')) < nbr)
+		//if (ft_isoverflow(nptr, nbr))
 		{
 			if (sign == 1)
 				return (-1);
@@ -51,5 +51,5 @@ int	ft_atoi(const char *nptr)
 		nbr = 10 * nbr + (*nptr - '0');
 		nptr++;
 	}
-	return (sign * (int)nbr);
+	return (sign * nbr);
 }
