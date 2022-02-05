@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:24:01 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:24:02 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/02/05 22:32:36 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int nbr)
 
 	sign = ft_get_numsign(nbr);
 	len = ft_get_numlen(nbr);
-	str = (char *)ft_calloc((len + 1), sizeof(char));
+	str = ft_calloc((len + 1), sizeof(char));
 	if (!str)
 		return (NULL);
 	pos = 0;

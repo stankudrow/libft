@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:33:40 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:33:40 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/02/05 22:32:50 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	node = (t_list *)ft_calloc(1, sizeof(t_list));
+	node = ft_calloc(1, sizeof(t_list));
 	if (node)
 	{
 		node->content = content;

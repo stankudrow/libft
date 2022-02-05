@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:11:25 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/13 10:18:59 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/02/05 22:33:50 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len2 = ft_strlen(s2);
 	if (ft_ismemoverflow(len1, len2))
 		return (NULL);
-	str = (char *)ft_calloc(len1 + len2 + 1, sizeof(char));
+	str = ft_calloc(len1 + len2 + 1, sizeof(char));
 	if (str)
 	{
 		ft_memmove(str, s1, len1 + 1);

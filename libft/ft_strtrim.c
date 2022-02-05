@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:13:31 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:13:31 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/02/05 22:34:04 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1--;
 	end = s1;
 	span = end - start + 1;
-	str = (char *)ft_calloc(span + 1, sizeof(char));
+	str = ft_calloc(span + 1, sizeof(char));
 	if (str)
 		ft_memmove(str, start, span);
 	return (str);
