@@ -12,7 +12,8 @@ ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
 ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c
 ASRCS := ft_substr.c ft_strjoin.c ft_strtrim.c \
 ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
+ft_memccpy.c
 SRCS := $(MSRCS) $(ASRCS)
 SRCS_BONUS := ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
@@ -47,4 +48,4 @@ so: bonus
 	$(CC) -nostartfiles -shared -o $(LIBSO) -fPIC $(SRCS) $(SRCS_BONUS)
 
 bonus: $(NAME) $(OBJS_BONUS)
-	ar urs $(NAME) $(OBJS_BONUS)
+	ar crs $(NAME) $(OBJS_BONUS)

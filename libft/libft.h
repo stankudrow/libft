@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:29:20 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/11 02:04:09 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/04/04 17:42:43 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nbr, int fd);
 void	ft_putstr_fd(char *s, int fd);
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
