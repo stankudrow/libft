@@ -6,7 +6,7 @@
 /*   By: stanislav <student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 22:17:45 by stanislav         #+#    #+#             */
-/*   Updated: 2021/11/03 22:17:46 by stanislav        ###   ########.fr       */
+/*   Updated: 2022/05/03 12:44:04 by stanislav        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		return (dst);
 	dest = dst;
 	source = src;
-	if (src < dst)
+	if (src < dst && dst - src < (long long int) n)
 		while (n--)
 			dest[n] = source[n];
-	if (src > dst)
+	else
 		ft_memcpy(dst, src, n);
 	return (dst);
 }
