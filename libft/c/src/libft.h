@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// include guards - prevent multiple inclusions of the same header file
 #ifndef  LIBFT_H
 # define LIBFT_H
 
