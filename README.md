@@ -4,9 +4,18 @@ The first project of the School 42.
 
 Linted according to the `norminette` v3.3.51 rules.
 
-## Testers
+## Table of Contents
 
-**Внимание**: тестеры пишут люди, в них могут быть ошибки и скорее всего так и есть.
+- [Overview](#overview)
+  - [Testers](#testers)
+
+### Overview
+
+This project was done in C during my learning at the School 42 (School 21).
+
+#### Testers
+
+**Attention**: test-programs are written by people, so rely on them cautiously.
 
 * [libft-unit-test](https://github.com/alelievr/libft-unit-test)
 
@@ -15,7 +24,3 @@ Linted according to the `norminette` v3.3.51 rules.
 * [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
 It is normal (!) if some of your functions are not protected.
-
-## Libftx
-
-[Libftx](https://github.com/stankudrow/libftx) is an extended C library for the School 42 projects.
