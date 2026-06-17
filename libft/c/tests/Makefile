@@ -8,7 +8,7 @@ CFLAGS = -I../src -Wall -Wextra -Werror -Wno-unused-variable
 LDFLAGS = -L../src -lcheck -lcheck_pic -lm -lsubunit -lft
 
 # target executable name
-TARGET = tests
+TARGET = tests.out
 
 # all C files are included
 SOURCES = $(wildcard *.c)
