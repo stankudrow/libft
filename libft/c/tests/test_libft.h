@@ -6,4 +6,6 @@
 TCase *is_char_kind_test_case(void);
 TCase *to_char_case_test_case(void);
 
+TCase *ft_str_test_case(void);
+
 #endif /* TEST_LIBFT_H */

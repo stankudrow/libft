@@ -13,6 +13,7 @@ Suite *libft_main_suite(void)
 
     suite_add_tcase(s, is_char_kind_test_case());
     suite_add_tcase(s, to_char_case_test_case());
+    suite_add_tcase(s, ft_str_test_case());
 
     return s;
 }
