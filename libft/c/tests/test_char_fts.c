@@ -218,7 +218,7 @@ END_TEST
 
 TCase *to_char_case_test_case(void)
 {
-    TCase *tc = tcase_create("ft_to<case> test case");
+    TCase *tc = tcase_create("ft_to<char_case> test case");
 
     tcase_add_test(tc, check_tolower);
     tcase_add_test(tc, check_toupper);
