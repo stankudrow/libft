@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 
-START_TEST(check_isalnum)
+START_TEST(check_ft_isalnum)
 {
     char c, result;
 
@@ -56,7 +56,7 @@ START_TEST(check_isalnum)
 END_TEST
 
 
-START_TEST(check_isalpha)
+START_TEST(check_ft_isalpha)
 {
     char c, result;
 
@@ -87,7 +87,7 @@ START_TEST(check_isalpha)
 END_TEST
 
 
-START_TEST(check_isascii)
+START_TEST(check_ft_isascii)
 {
     int c, result;
 
@@ -114,7 +114,7 @@ START_TEST(check_isascii)
 END_TEST
 
 
-START_TEST(check_isdigit)
+START_TEST(check_ft_isdigit)
 {
     char c, result;
 
@@ -141,7 +141,7 @@ START_TEST(check_isdigit)
 END_TEST
 
 
-START_TEST(check_isprint)
+START_TEST(check_ft_isprint)
 {
     int c, result;
 
@@ -172,11 +172,11 @@ TCase *is_char_kind_test_case(void)
 {
     TCase *tc = tcase_create("ft_is<char_kind> test case");
 
-    tcase_add_test(tc, check_isalnum);
-    tcase_add_test(tc, check_isalpha);
-    tcase_add_test(tc, check_isascii);
-    tcase_add_test(tc, check_isdigit);
-    tcase_add_test(tc, check_isprint);
+    tcase_add_test(tc, check_ft_isalnum);
+    tcase_add_test(tc, check_ft_isalpha);
+    tcase_add_test(tc, check_ft_isascii);
+    tcase_add_test(tc, check_ft_isdigit);
+    tcase_add_test(tc, check_ft_isprint);
 
     return tc;
 }
