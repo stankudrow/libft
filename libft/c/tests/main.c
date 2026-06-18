@@ -1,100 +1,10 @@
-#include "libft.h"
-#include <check.h>
-#include <stdbool.h>
+#include "test_libft.h"
+
+#include <stdio.h>
+#include <getopt.h>
 
 
-START_TEST(check_isdigit)
-{
-    char c = '0';
-    char result = ft_isdigit(c);
-    ck_assert_int_eq(result, true);
-
-    c = '0' - 1;
-    result = ft_isdigit(c);
-    ck_assert_int_ne(result, true);
-
-    c = '9';
-    result = ft_isdigit(c);
-    ck_assert_int_ne(result, false);
-
-    c = '9' + 1;
-    result = ft_isdigit(c);
-    ck_assert_int_eq(result, false);
-}
-END_TEST
-
-
-START_TEST(check_isprint)
-{
-    char c = 100;
-    char result = ft_isprint(c);
-    ck_assert_int_eq(result, true);
-
-    c = 31;
-    result = ft_isprint(c);
-    ck_assert_int_ne(result, true);
-
-    c = 127;
-    result = ft_isprint(c);
-    ck_assert_int_eq(result, false);
-}
-END_TEST
-
-
-START_TEST(check_tolower)
-{
-    char c = 'A';
-    char result = ft_tolower(c);
-    ck_assert_int_eq(result, 'a');
-
-    c = 'a';
-    result = ft_tolower(c);
-    ck_assert_int_eq(result, 'a');
-
-    c = 15;
-    result = ft_tolower(c);
-    ck_assert_int_eq(result, 15);
-}
-END_TEST
-
-
-START_TEST(check_toupper)
-{
-    char c = 'a';
-    char result = ft_toupper(c);
-    ck_assert_int_eq(result, 'A');
-
-    c = 'A';
-    result = ft_toupper(c);
-    ck_assert_int_eq(result, 'A');
-
-    c = 15;
-    result = ft_toupper(c);
-    ck_assert_int_eq(result, 15);
-}
-END_TEST
-
-
-TCase *is_char_kind_test_case(void)
-{
-    TCase *tc = tcase_create("ft_is<char_kind> test case");
-
-    tcase_add_test(tc, check_isdigit);
-    tcase_add_test(tc, check_isprint);
-
-    return tc;
-}
-
-
-TCase *to_char_case_test_case(void)
-{
-    TCase *tc = tcase_create("ft_to<case> test case");
-
-    tcase_add_test(tc, check_tolower);
-    tcase_add_test(tc, check_toupper);
-
-    return tc;
-}
+// https://github.com/libcheck/check/tree/master/doc/example/tests
 
 
 Suite *libft_main_suite(void)
@@ -108,16 +18,39 @@ Suite *libft_main_suite(void)
 }
 
 
-int main(void)
+int main(int argc, char **argv)
 {
     int number_failed;
     Suite *s;
     SRunner *sr;
 
+    int output_mode = CK_NORMAL;
+    int opt;
+    while ((opt = getopt(argc, argv, "vh")) != -1) {
+        switch (opt) {
+            case 'v':
+                output_mode = CK_VERBOSE;
+                fprintf(stdout, "Verbose CK_VERBOSE mode enabled\n");
+                break;
+            case 'h':
+                fprintf(stdout,"Usage: %s [-v] [-h]\n", argv[0]);
+                return 0;
+            case '?':
+                fprintf(stderr, "Unknown option: -%c\n", optopt);
+                fprintf(stderr, "Use -h for help\n");
+                return 1;
+            default:
+                fprintf(stderr, "Unexpected error\n");
+                return 1;
+        }
+    }
+
     s = libft_main_suite();
     sr = srunner_create(s);
+    // srunner_set_log (sr, "test_report.log");
+    srunner_set_tap (sr, "test_report.tap");
 
-    srunner_run_all(sr, CK_NORMAL);
+    srunner_run_all(sr, output_mode);
     number_failed = srunner_ntests_failed(sr);
     srunner_free(sr);
 

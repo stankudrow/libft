@@ -19,6 +19,7 @@ OBJECTS = $(SOURCES:.c=.o)
 .PHONY: test clean rebuild re
 
 # test target - goes first, therefore, the default when `make` is run
+# you can also run `./$(TARGET) -v/--verbose` for a verbose output in the terminal
 test: $(TARGET)
 	./$(TARGET)
 
