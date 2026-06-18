@@ -21,8 +21,8 @@ START_TEST(check_ft_strlen)
     ck_assert_int_eq(result, 2);
 }
 END_TEST
-
 START_TEST(check_ft_strlen_null) { ft_strlen(NULL); } END_TEST
+// START_TEST(check_std_strlen_null) { strlen(NULL); } END_TEST
 
 
 // this test states the functionality according to a white box approach
@@ -112,6 +112,7 @@ TCase *ft_str_test_case(void)
 
     tcase_add_test(tc, check_ft_strlen);
     tcase_add_test_raise_signal(tc, check_ft_strlen_null, SIGSEGV);
+    // tcase_add_test_raise_signal(tc, check_std_strlen_null, SIGSEGV);
 
     tcase_add_test(tc, check_ft_strnstr);
 
