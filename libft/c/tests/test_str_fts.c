@@ -1,6 +1,6 @@
-#include "libft.h"
-
 #include "test_libft.h"
+
+#include "libft.h"
 
 #include <signal.h>
 #include <string.h>
@@ -21,7 +21,10 @@ START_TEST(check_ft_strlen)
     ck_assert_int_eq(result, 2);
 }
 END_TEST
+
 START_TEST(check_ft_strlen_null) { ft_strlen(NULL); } END_TEST
+
+// strlen is marked nonnull, so passing NULL is obstructed
 // START_TEST(check_std_strlen_null) { strlen(NULL); } END_TEST
 
 
