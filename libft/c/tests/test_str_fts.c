@@ -6,7 +6,6 @@
 #include <string.h>
 
 
-
 START_TEST(check_ft_strlen)
 {
     char *str;
