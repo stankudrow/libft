@@ -1,7 +1,7 @@
 # compiler
 CC = gcc
 # compilation flags
-CFLAGS = -I../src -Wall -Wextra -Werror -Wno-unused-variable
+CFLAGS = -I../src -Wall -Wextra -Werror -std=c2x
 # linkage flags:
 # * `-L../src` -> add the path where to search files for linkage;
 # * `-lft` -> link the library ft which will be prepended with the "lib" prefix, so `libft.a` or `libft.so` will be looked for.

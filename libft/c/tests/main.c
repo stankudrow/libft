@@ -1,5 +1,44 @@
-#include <check.h>
 #include "libft.h"
+#include <check.h>
+#include <stdbool.h>
+
+
+START_TEST(check_isdigit)
+{
+    char c = '0';
+    char result = ft_isdigit(c);
+    ck_assert_int_eq(result, true);
+
+    c = '0' - 1;
+    result = ft_isdigit(c);
+    ck_assert_int_ne(result, true);
+
+    c = '9';
+    result = ft_isdigit(c);
+    ck_assert_int_ne(result, false);
+
+    c = '9' + 1;
+    result = ft_isdigit(c);
+    ck_assert_int_eq(result, false);
+}
+END_TEST
+
+
+START_TEST(check_isprint)
+{
+    char c = 100;
+    char result = ft_isprint(c);
+    ck_assert_int_eq(result, true);
+
+    c = 31;
+    result = ft_isprint(c);
+    ck_assert_int_ne(result, true);
+
+    c = 127;
+    result = ft_isprint(c);
+    ck_assert_int_eq(result, false);
+}
+END_TEST
 
 
 START_TEST(check_tolower)
@@ -36,20 +75,38 @@ START_TEST(check_toupper)
 END_TEST
 
 
-Suite *libft_suite(void)
+TCase *is_char_kind_test_case(void)
 {
-    Suite *s;
-    TCase *tc_core;
+    TCase *tc = tcase_create("ft_is<char_kind> test case");
 
-    s = suite_create("libft tests");
-    tc_core = tcase_create("Core");
+    tcase_add_test(tc, check_isdigit);
+    tcase_add_test(tc, check_isprint);
 
-    tcase_add_test(tc_core, check_tolower);
-    tcase_add_test(tc_core, check_toupper);
-    suite_add_tcase(s, tc_core);
+    return tc;
+}
+
+
+TCase *to_char_case_test_case(void)
+{
+    TCase *tc = tcase_create("ft_to<case> test case");
+
+    tcase_add_test(tc, check_tolower);
+    tcase_add_test(tc, check_toupper);
+
+    return tc;
+}
+
+
+Suite *libft_main_suite(void)
+{
+    Suite *s = suite_create("Main test suite");
+
+    suite_add_tcase(s, is_char_kind_test_case());
+    suite_add_tcase(s, to_char_case_test_case());
 
     return s;
 }
+
 
 int main(void)
 {
@@ -57,7 +114,7 @@ int main(void)
     Suite *s;
     SRunner *sr;
 
-    s = libft_suite();
+    s = libft_main_suite();
     sr = srunner_create(s);
 
     srunner_run_all(sr, CK_NORMAL);
