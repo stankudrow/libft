@@ -21,10 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	chr = c;
 	while (*s)
 	{
-		if (*s == c) {
+		if (*s == c)
 			cptr = s;
-			break ;
-		}
 		s++;
 	}
 	if (*cptr == chr)

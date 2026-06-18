@@ -7,7 +7,7 @@
 
 
 
-START_TEST(check_strlen)
+START_TEST(check_ft_strlen)
 {
     char *str;
     size_t result;
@@ -22,11 +22,56 @@ START_TEST(check_strlen)
 }
 END_TEST
 
+START_TEST(check_ft_strlen_null) { ft_strlen(NULL); } END_TEST
 
-START_TEST(check_strlen_null) { ft_strlen(NULL); } END_TEST
+
+// this test states the functionality according to a white box approach
+START_TEST(check_ft_strnstr)
+{
+    char *big, *lil;
+    size_t n;
+    char *result;
+
+    big = NULL, lil = "ttle", n = 0;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "ger", lil = "ill", n = 0;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "ger", lil = "", n = 5;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_str_eq(result, big);
+
+    // big = NULL, lil = "tre", n = 5;
+    // result = ft_strnstr(big, lil, n);
+    // ck_assert_ptr_null(result);
+
+    big = "A", lil = "tre", n = 5;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "ABC", lil = "tre", n = 2;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "allo, salut", lil = ",", n = 3;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "allo, salut", lil = ",", n = 4;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_ptr_null(result);
+
+    big = "allo, salut", lil = ",", n = 5;
+    result = ft_strnstr(big, lil, n);
+    ck_assert_str_eq(result, big + 4);
+}
+END_TEST
 
 
-START_TEST(check_strchr)
+START_TEST(check_ft_strrchr)
 {
     char *str;
     char c;
@@ -42,19 +87,19 @@ START_TEST(check_strchr)
 
     str = "hello", c = 'l';
     result = ft_strrchr(str, c);
-    answer = strchr(str, c);
+    answer = strrchr(str, c);
     ck_assert_str_eq(result, answer);
-    ck_assert_str_eq(result, "llo");
+    ck_assert_str_eq(result, "lo");
 
     str = "hello", c = 'o';
     result = ft_strrchr(str, c);
-    answer = strchr(str, c);
+    answer = strrchr(str, c);
     ck_assert_str_eq(result, answer);
     ck_assert_str_eq(result, "o");
 
     str = "hello", c = 'H';
     result = ft_strrchr(str, c);
-    answer = strchr(str, c);
+    answer = strrchr(str, c);
     ck_assert_ptr_null(result);
     ck_assert_ptr_null(answer);
 }
@@ -65,10 +110,12 @@ TCase *ft_str_test_case(void)
 {
     TCase *tc = tcase_create("ft_<str> test case");
 
-    tcase_add_test(tc, check_strlen);
-    tcase_add_test_raise_signal(tc, check_strlen_null, SIGSEGV);
+    tcase_add_test(tc, check_ft_strlen);
+    tcase_add_test_raise_signal(tc, check_ft_strlen_null, SIGSEGV);
 
-    tcase_add_test(tc, check_strchr);
+    tcase_add_test(tc, check_ft_strnstr);
+
+    tcase_add_test(tc, check_ft_strrchr);
 
     return tc;
 }
