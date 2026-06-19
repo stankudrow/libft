@@ -55,4 +55,4 @@ dkms.conf
 
 # https://testanything.org/tap-specification
 *.tap
-!libft/c/test_report.tap
+!c/test_report.tap
