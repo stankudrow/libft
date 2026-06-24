@@ -8,8 +8,10 @@ char *uft_get_formatted_string(const char *fmt, ...);
 
 // end of utils section
 
-TCase *is_char_kind_test_case(void);
-TCase *to_char_case_test_case(void);
+TCase *ft_atoi_test_case(void);
+
+TCase *ft_is_char_kind_test_case(void);
+TCase *ft_to_char_case_test_case(void);
 
 TCase *ft_mem_test_case(void);
 

@@ -168,7 +168,7 @@ START_TEST(check_ft_isprint)
 END_TEST
 
 
-TCase *is_char_kind_test_case(void)
+TCase *ft_is_char_kind_test_case(void)
 {
     TCase *tc = tcase_create("ft_is<char_kind> test case");
 
@@ -216,7 +216,7 @@ START_TEST(check_toupper)
 END_TEST
 
 
-TCase *to_char_case_test_case(void)
+TCase *ft_to_char_case_test_case(void)
 {
     TCase *tc = tcase_create("ft_to<char_case> test case");
 

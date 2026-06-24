@@ -12,8 +12,10 @@ Suite *libft_main_suite(void)
 {
     Suite *s = suite_create("Main test suite");
 
-    suite_add_tcase(s, is_char_kind_test_case());
-    suite_add_tcase(s, to_char_case_test_case());
+    suite_add_tcase(s, ft_atoi_test_case());
+
+    suite_add_tcase(s, ft_is_char_kind_test_case());
+    suite_add_tcase(s, ft_to_char_case_test_case());
 
     suite_add_tcase(s, ft_mem_test_case());
 
@@ -55,7 +57,7 @@ int main(int argc, char **argv)
     s = libft_main_suite();
     sr = srunner_create(s);
     // srunner_set_log (sr, "test_report.log");
-    srunner_set_tap (sr, "test_report.tap");
+    srunner_set_tap(sr, "../test_report.tap");
 
     srunner_run_all(sr, output_mode);
     number_failed = srunner_ntests_failed(sr);
