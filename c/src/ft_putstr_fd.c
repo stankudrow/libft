@@ -11,9 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+/* original function pourly implemented */
+// void	ft_putstr_fd(char *s, int fd)
+// {
+// 	while (*s)
+// 		ft_putchar_fd(*s++, fd);
+// }
+
+
+void ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+    // one system call is cheaper than multiple per-character `write` calls
+	write(fd, s, ft_strlen(s));
 }

@@ -87,4 +87,4 @@ int		ft_lstsize(t_list *lst);
 
 // end of the bonus section
 
-#endif
+#endif /* LIBFT_H */
