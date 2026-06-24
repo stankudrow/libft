@@ -49,6 +49,7 @@ TCase *ft_atoi_test_case(void)
     TCase *tc = tcase_create("ft_atoi test case");
 
     tcase_add_test(tc, check_ft_atoi);
+    // there is no itoa in standard C library
 
     return tc;
 }

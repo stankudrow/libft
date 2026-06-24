@@ -22,6 +22,9 @@ START_TEST(check_uft_allocate_formatted_string)
     result = uft_allocate_formatted_string("The %s answer is %.4f!", "extended", 42.21);
     ck_assert_str_eq(result, "The extended answer is 42.2100!");
     free(result);
+
+    result = uft_allocate_formatted_string(NULL, "extended", 42.21);
+    ck_assert_ptr_null(result);
 }
 
 
