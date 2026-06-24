@@ -14,14 +14,12 @@ const char *test_case_name = "ft_<put-in-fd> test case";
 //https://libcheck.github.io/check/doc/check_html/check_4.html#Checked-vs-Unchecked-Fixtures
 
 // I need a pipe (channel) to intercept data from a file descriptor (fd)
-int pipefd[2];
-// I need a buffer to store the intercepted data
-char *buffer;
+int pipefd[2];  // global...dangerous
 
 // I need an unchecked test fixtures for this test module:
 // - they are run in the same address space as the test program;
-// - setup(), if defined, is run before the test case started - I need one pipe and one buffer;
-// - teardown(), if defined, is run after the test case is done - I need to close the pipe and free the buffer;
+// - setup(), if defined, is run before the test case started;
+// - teardown(), if defined, is run after the test case is done;
 // - an unchecked teardown() fixture will run even if a unit test fails.
 
 void setup()
@@ -42,7 +40,6 @@ void teardown()
 {
     close(pipefd[0]);
     close(pipefd[1]);
-    free(buffer);
 }
 
 
@@ -73,6 +70,7 @@ START_TEST(check_ft_putstr_fd)
     ft_putstr_fd(str, pipefd[1]);
     bytes_read = read(pipefd[0], result, strlen(str));
     if (bytes_read < 0) ck_abort_msg("check_ft_putstr_fd failed");
+    result[bytes_read] = '\0';
     ck_assert_str_eq(result, str);
     free(result);
 }
@@ -82,6 +80,8 @@ TCase *ft_put_in_fd_test_case(void)
 {
     TCase *tc = tcase_create(test_case_name);
 
+    // unchecked fixture is enough for this dummy implementation
+    // can go off when tests are run concurrently (shared global state)
     tcase_add_unchecked_fixture(tc, setup, teardown);
     tcase_add_test(tc, check_ft_putchar_fd);
     tcase_add_test(tc, check_ft_putstr_fd);
