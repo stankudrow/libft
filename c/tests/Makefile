@@ -25,6 +25,9 @@ LOG_FILES = $(wildcard *.log) $(wildcard *.tap)
 test: $(TARGET)
 	./$(TARGET)
 
+check_leaks: $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET)
+
 # $@ - target executable name, $^ - all dependencies
 $(TARGET): $(OBJECTS)
 	$(CC) -o $@ $^ $(LDFLAGS)

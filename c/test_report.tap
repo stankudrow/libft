@@ -10,12 +10,11 @@ ok 9 - test_mem_fts.c:ft_<mem> test case:check_ft_memcmp: Passed
 ok 10 - test_mem_fts.c:ft_<mem> test case:check_ft_memset: Passed
 ok 11 - test_mem_fts.c:ft_<mem> test case:check_ft_memset_null: Passed
 ok 12 - test_mem_fts.c:ft_<mem> test case:check_ft_memset_literal: Passed
-ok 13 - test_mem_fts.c:ft_<mem> test case:check_ft_memset_out: Passed
-ok 14 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putchar_fd: Passed
-ok 15 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putstr_fd: Passed
-ok 16 - test_str_fts.c:ft_<str> test case:check_ft_strlen: Passed
-ok 17 - test_str_fts.c:ft_<str> test case:check_ft_strlen_null: Passed
-ok 18 - test_str_fts.c:ft_<str> test case:check_ft_strnstr: Passed
-ok 19 - test_str_fts.c:ft_<str> test case:check_ft_strrchr: Passed
-ok 20 - test_test_utils.c:test_utils:check_uft_allocate_formatted_string: Passed
-1..20
+ok 13 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putchar_fd: Passed
+ok 14 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putstr_fd: Passed
+ok 15 - test_str_fts.c:ft_<str> test case:check_ft_strlen: Passed
+ok 16 - test_str_fts.c:ft_<str> test case:check_ft_strlen_null: Passed
+ok 17 - test_str_fts.c:ft_<str> test case:check_ft_strnstr: Passed
+ok 18 - test_str_fts.c:ft_<str> test case:check_ft_strrchr: Passed
+ok 19 - test_test_utils.c:test_utils:check_uft_allocate_formatted_string: Passed
+1..19

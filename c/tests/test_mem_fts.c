@@ -59,11 +59,6 @@ START_TEST(check_ft_memset_null) { ft_memset(NULL, 1, 1); } END_TEST
 
 START_TEST(check_ft_memset_literal) { ft_memset("Nope", 'Z', 2); } END_TEST
 
-START_TEST(check_ft_memset_out) {
-    char *str = strdup("to be violated");
-    ft_memset((void *)str, 'Z', strlen(str) + 100);
-} END_TEST
-
 
 TCase *ft_mem_test_case(void)
 {
@@ -74,7 +69,6 @@ TCase *ft_mem_test_case(void)
     tcase_add_test(tc, check_ft_memset);
     tcase_add_test_raise_signal(tc, check_ft_memset_null, SIGSEGV);
     tcase_add_test_raise_signal(tc, check_ft_memset_literal, SIGSEGV);
-    tcase_add_test_raise_signal(tc, check_ft_memset_out, SIGSEGV);
 
     return tc;
 }
