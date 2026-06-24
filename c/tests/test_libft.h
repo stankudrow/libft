@@ -4,7 +4,9 @@
 #include <check.h>
 
 // test utils (internal) (uft_ prefix)
-char *uft_get_formatted_string(const char *fmt, ...);
+char *uft_allocate_formatted_string(const char *fmt, ...);
+
+TCase *test_utils_test_case(void);
 
 // end of utils section
 

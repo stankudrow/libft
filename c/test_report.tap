@@ -17,4 +17,5 @@ ok 16 - test_str_fts.c:ft_<str> test case:check_ft_strlen: Passed
 ok 17 - test_str_fts.c:ft_<str> test case:check_ft_strlen_null: Passed
 ok 18 - test_str_fts.c:ft_<str> test case:check_ft_strnstr: Passed
 ok 19 - test_str_fts.c:ft_<str> test case:check_ft_strrchr: Passed
-1..19
+ok 20 - test_test_utils.c:test_utils:check_uft_allocate_formatted_string: Passed
+1..20

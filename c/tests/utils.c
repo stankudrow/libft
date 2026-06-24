@@ -4,7 +4,7 @@
 
 
 /* see `man 3 vsnprintf` page */
-char *uft_get_formatted_string(const char *fmt, ...)
+char *uft_allocate_formatted_string(const char *fmt, ...)
 {
     if (!fmt) return NULL;
 

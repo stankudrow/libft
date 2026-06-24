@@ -23,6 +23,8 @@ Suite *libft_main_suite(void)
 
     suite_add_tcase(s, ft_str_test_case());
 
+    suite_add_tcase(s, test_utils_test_case());
+
     return s;
 }
 

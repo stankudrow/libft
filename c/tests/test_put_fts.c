@@ -27,7 +27,7 @@ char *buffer;
 void setup()
 {
     if (pipe(pipefd) == -1) {
-        char *str = uft_get_formatted_string("pipe failed for %s", test_case_name);
+        char *str = uft_allocate_formatted_string("pipe failed for %s", test_case_name);
         if (!str) {
             perror("internal error");
             exit(EXIT_FAILURE);
