@@ -41,13 +41,13 @@ START_TEST(check_ft_memset)
     result = ft_memset(reg, c, n);
     ck_assert_mem_eq(result, reg, strlen(reg));
 
-    reg = uft_allocate_str("Modern C"), c = 'A', n = 1;
+    reg = strdup("Modern C"), c = 'A', n = 1;
     result = ft_memset(reg, c, n);
     ck_assert_mem_eq(result, reg, strlen(reg));
     ck_assert_str_eq(reg, "Aodern C");
     free(reg);
 
-    reg = uft_allocate_str("Modern C"), c = 'D', n = 1;
+    reg = strdup("Modern C"), c = 'D', n = 1;
     result = ft_memset(reg + 7, c, n);
     ck_assert_mem_eq(result, reg + 7, strlen(reg));
     ck_assert_str_eq(reg, "Modern D");
@@ -60,7 +60,7 @@ START_TEST(check_ft_memset_null) { ft_memset(NULL, 1, 1); } END_TEST
 START_TEST(check_ft_memset_literal) { ft_memset("Nope", 'Z', 2); } END_TEST
 
 START_TEST(check_ft_memset_out) {
-    char *str = uft_allocate_str("to be violated");
+    char *str = strdup("to be violated");
     ft_memset((void *)str, 'Z', strlen(str) + 100);
 } END_TEST
 

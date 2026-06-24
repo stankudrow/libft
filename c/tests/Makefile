@@ -13,8 +13,10 @@ TARGET = tests.out
 # all C files are included
 SOURCES = $(wildcard *.c)
 
-# object files (replace .c with .o)
-OBJECTS = $(SOURCES:.c=.o)
+# object files (replace .c with .o) + possibly non-registered .o files
+OBJECTS = $(SOURCES:.c=.o) $(wildcard *.o)
+
+LOG_FILES = $(wildcard *.log) $(wildcard *.tap)
 
 .PHONY: test clean rebuild re
 
@@ -33,7 +35,7 @@ $(TARGET): $(OBJECTS)
 
 # clean target
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+	rm -f $(OBJECTS) $(TARGET) $(LOG_FILES)
 
 # rebuild the target
 rebuild: clean $(TARGET)
