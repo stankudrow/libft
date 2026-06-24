@@ -2,38 +2,41 @@
 
 The first project of the School 42.
 
-Linted according to the `norminette` v3.3.51 rules (at the time of writing long time ago).
+Linted according to the `norminette` v3.3.51 rules (at the time of writing which was a long time ago).
 
 ## Table of Contents
 
 - [Overview](#overview)
-  - [Third-party libft test programs](#third-party-libft-test-programs)
-  - [Unit Testing in C](#unit-testing-in-c)
+- [Libft in C](#libft-in-c)
+- [Related 42cursus Projects](#related-42cursus-projects)
 
 ### Overview
 
-This project was done in C during my learning at the School 42 (School 21). Now it is located in the [c](./c) directory. To build the project, use `make` or `make bonus` to include linked list data structure and functions and assumed to be a default build.
+This project was done in C during my learning at the School 42 (School 21). Now it is located in the [c](./c) directory.
 
-#### Third-party libft test programs
+### Libft in C
 
-**Attention**: test-programs are written by people, so rely on them cautiously.
+I reorganised the original code and placed it in the [c](./c) directory. To build the project, use `make` or `make bonus` which will create a static "libft.a" library. During my time at School 42, I checked the correctness of the library using the following testing programs (**attention**, these programs are written by people, so rely on them cautiously):
 
-* [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+- [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+- [libftTester](https://github.com/Tripouille/libftTester)
+- [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
-* [libftTester](https://github.com/Tripouille/libftTester)
+It is normal (!) if some of your functions are reported as not protected, you don't need to be scared of opinionated "boom" messages..or maybe you have to depending on the School 42 current subject.
 
-* [libft-war-machine](https://github.com/ska42/libft-war-machine)
+Later on, I decided that I needed (for some unexplicable reason) to learn how to write unit tests in C and this project seems to me like a perfect candidate to start with. I picked [Check](https://libcheck.github.io/check/) framework because it is:
 
-It is normal (!) if some of your functions are not protected according to some test.
+- installable via `sudo apt install check` (see the [Installing Check](https://libcheck.github.io/check/web/install.html) section for more details);
+- simple enough and has some documentation and even tutorials: [basic](https://libcheck.github.io/check/doc/check_html/check_3.html) and [advanced](https://libcheck.github.io/check/doc/check_html/check_4.html#Advanced-Features) + not so-long [API reference](https://libcheck.github.io/check/doc/doxygen/html/check_8h.html);
+- advised/required (?) at School 21.
 
-#### Unit Testing in C
+So, if you are a student or an "intern" at School 21 or 42, you might want to use the "Check" framework in your C projects. Tests are available in the [c/tests](./c/tests) directory. Tests are not organised according to best practices, so please don't expect them to be idiomatic and well-structured. **Disclaimer**: I had and have no eagerness to provide full coverage for this project in C, only functions or data structures of interest that was enough **for me** to master "Check" to some basic level.
 
-After some "research", I picked up two C unit-test frameworks:
+### Related 42cursus projects
 
-* [Criterion](https://criterion.readthedocs.io/en/master/index.html) - seems to be mature and well-maintained.
-* [Check](hhttps://libcheck.github.io/check/) - this one is (or was) used at School 21 + it .
+My other 42cursus projects in C that are available on GitHub (and maybe will be "Check"ed):
 
-The "Check" framework is a natural choice for this project:
+- [get-next-line](https://github.com/stankudrow/get_next_line)
+- [ft_printf](https://github.com/stankudrow/ft_printf)
 
-- Can be installed via `sudo apt install check` (see the [Installing Check](https://libcheck.github.io/check/web/install.html) section for more details);
-- Advised by the School 21 C project subjects, do, if you are a student or an "intern" at School 21, you might want to use the "Check" framework for unit testing your libft functions.
+Other projects may be published without C-code, because programming in C is tiresome compparable to walking across minefields with occasional reinvention of wheels and other stuff, not mentioning mental fatigue (IMHO).
