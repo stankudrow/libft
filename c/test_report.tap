@@ -1,20 +1,3 @@
-ok 1 - test_ft_atoi.c:ft_atoi test case:check_ft_atoi: Passed
-ok 2 - test_char_fts.c:ft_is<char_kind> test case:check_ft_isalnum: Passed
-ok 3 - test_char_fts.c:ft_is<char_kind> test case:check_ft_isalpha: Passed
-ok 4 - test_char_fts.c:ft_is<char_kind> test case:check_ft_isascii: Passed
-ok 5 - test_char_fts.c:ft_is<char_kind> test case:check_ft_isdigit: Passed
-ok 6 - test_char_fts.c:ft_is<char_kind> test case:check_ft_isprint: Passed
-ok 7 - test_char_fts.c:ft_to<char_case> test case:check_tolower: Passed
-ok 8 - test_char_fts.c:ft_to<char_case> test case:check_toupper: Passed
-ok 9 - test_mem_fts.c:ft_<mem> test case:check_ft_memcmp: Passed
-ok 10 - test_mem_fts.c:ft_<mem> test case:check_ft_memset: Passed
-ok 11 - test_mem_fts.c:ft_<mem> test case:check_ft_memset_null: Passed
-ok 12 - test_mem_fts.c:ft_<mem> test case:check_ft_memset_literal: Passed
-ok 13 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putchar_fd: Passed
-ok 14 - test_put_fts.c:ft_<put-in-fd> test case:check_ft_putstr_fd: Passed
-ok 15 - test_str_fts.c:ft_<str> test case:check_ft_strlen: Passed
-ok 16 - test_str_fts.c:ft_<str> test case:check_ft_strlen_null: Passed
-ok 17 - test_str_fts.c:ft_<str> test case:check_ft_strnstr: Passed
-ok 18 - test_str_fts.c:ft_<str> test case:check_ft_strrchr: Passed
-ok 19 - test_test_utils.c:test_utils:check_uft_allocate_formatted_string: Passed
-1..19
+version https://git-lfs.github.com/spec/v1
+oid sha256:b5bf0b6e1837699ee323847da185e7406a8ee15fa7fb6e7c2eabd10caf49590d
+size 1366
