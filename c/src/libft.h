@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// include guards - prevent multiple inclusions of the same header file
 #ifndef  LIBFT_H
 # define LIBFT_H
 
@@ -86,4 +87,4 @@ int		ft_lstsize(t_list *lst);
 
 // end of the bonus section
 
-#endif
+#endif /* LIBFT_H */

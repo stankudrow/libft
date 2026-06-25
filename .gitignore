@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.log
+
+# https://testanything.org/tap-specification
+*.tap
+!c/test_report.tap
