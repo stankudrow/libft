@@ -2,13 +2,13 @@
 
 The first project of the School 42.
 
-Linted according to the `norminette` v3.3.51 rules (at the time of writing which was a long time ago).
+Linted according to the `norminette` v3.3.51 rules (at the time of writing which was a long time ago) and **not anymore**.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Libft in C](#libft-in-c)
-- [Related 42cursus Projects](#related-42cursus-projects)
+- [References](#references)
 
 ### Overview
 
@@ -18,8 +18,8 @@ This project was done in C during my learning at the School 42 (School 21). Now 
 
 I reorganised the original code and placed it in the [c](./c) directory. To build the project, use `make` or `make bonus` which will create a static "libft.a" library. During my time at School 42, I checked the correctness of the library using the following testing programs (**attention**, these programs are written by people, so rely on them cautiously):
 
-- [libft-unit-test](https://github.com/alelievr/libft-unit-test)
-- [libftTester](https://github.com/Tripouille/libftTester)
+- [libft-unit-test](https://github.com/alelievr/libft-unit-test) (contributed more long time ago)
+- [libftTester](https://github.com/Tripouille/libftTester) (contributed less and also long time ago)
 - [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
 It is normal (!) if some of your functions are reported as not protected, you don't need to be scared of opinionated "boom" messages..or maybe you have to depending on the School 42 current subject.
@@ -32,11 +32,15 @@ Later on, I decided that I needed (for some unexplicable reason) to learn how to
 
 So, if you are a student or an "intern" at School 21 or 42, you might want to use the "Check" framework in your C projects. Tests are available in the [c/tests](./c/tests) directory. Tests are not organised according to best practices, so please don't expect them to be idiomatic and well-structured. **Disclaimer**: I had and have no eagerness to provide full coverage for this project in C, only functions or data structures of interest that was enough **for me** to master "Check" to some basic level.
 
-### Related 42cursus projects
+### References
 
-My other 42cursus projects in C that are available on GitHub (and maybe will be "Check"ed):
+Some of my other 42cursus projects in C:
 
 - [get-next-line](https://github.com/stankudrow/get_next_line)
 - [ft_printf](https://github.com/stankudrow/ft_printf)
 
-Other projects may be published without C-code, because programming in C is tiresome compparable to walking across minefields with occasional reinvention of wheels and other stuff, not mentioning mental fatigue (IMHO).
+Resources on C programming language:
+
+- [CodeVault playlist](https://www.youtube.com/@CodeVault/playlists) - must watch, practically all videos.
+
+The reason why I won't learn C++ and practice it on the libft -> [have fun](https://www.youtube.com/watch?v=7fGB-hjc2Gc).
