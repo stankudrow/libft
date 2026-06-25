@@ -22,24 +22,29 @@ int pipefd[2];  // global...dangerous
 // - teardown(), if defined, is run after the test case is done;
 // - an unchecked teardown() fixture will run even if a unit test fails.
 
-void setup()
+// This function is a helper and should be internal.
+// Imagine if you have another `setup` in another test module...
+// one definition rule is violated and tests won't be compiled.
+static void setup()
 {
     if (pipe(pipefd) == -1) {
         char *str = uft_allocate_formatted_string("pipe failed for %s", test_case_name);
         if (!str) {
-            perror("internal error");
+            perror("internal error occured when creating error message after pipe initialisation failure");
             exit(EXIT_FAILURE);
         }
         perror(str);
         free(str);
         exit(EXIT_FAILURE);
     }
+    // printf("A pipe for ft_put_fts.c module is opened.\n");
 }
 
-void teardown()
+static void teardown()
 {
     close(pipefd[0]);
     close(pipefd[1]);
+    // printf("The pipe for ft_put_fts.c module is closed.\n");
 }
 
 
@@ -80,8 +85,9 @@ TCase *ft_put_in_fd_test_case(void)
 {
     TCase *tc = tcase_create(test_case_name);
 
-    // unchecked fixture is enough for this dummy implementation
-    // can go off when tests are run concurrently (shared global state)
+    // An unchecked fixture is enough for this dummy implementation,
+    // but it can go off when tests are run concurrently (shared global state may suck).
+    // Also, you can try `tcase_add_checked_fixture` with some `printf`s in setup/teardown functions.
     tcase_add_unchecked_fixture(tc, setup, teardown);
     tcase_add_test(tc, check_ft_putchar_fd);
     tcase_add_test(tc, check_ft_putstr_fd);
