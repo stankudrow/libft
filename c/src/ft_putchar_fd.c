@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <unistd.h>  // system header files should go last
 
 void	ft_putchar_fd(char c, int fd)
 {

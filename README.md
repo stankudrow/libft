@@ -2,25 +2,41 @@
 
 The first project of the School 42.
 
-Linted according to the `norminette` v3.3.51 rules.
+Linted according to the `norminette` v3.3.51 rules (at the time of writing which was a long time ago).
 
 ## Table of Contents
 
 - [Overview](#overview)
-  - [Testers](#testers)
+- [Libft in C](#libft-in-c)
+- [Related 42cursus Projects](#related-42cursus-projects)
 
 ### Overview
 
-This project was done in C during my learning at the School 42 (School 21).
+This project was done in C during my learning at the School 42 (School 21). Now it is located in the [c](./c) directory.
 
-#### Testers
+### Libft in C
 
-**Attention**: test-programs are written by people, so rely on them cautiously.
+I reorganised the original code and placed it in the [c](./c) directory. To build the project, use `make` or `make bonus` which will create a static "libft.a" library. During my time at School 42, I checked the correctness of the library using the following testing programs (**attention**, these programs are written by people, so rely on them cautiously):
 
-* [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+- [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+- [libftTester](https://github.com/Tripouille/libftTester)
+- [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
-* [libftTester](https://github.com/Tripouille/libftTester)
+It is normal (!) if some of your functions are reported as not protected, you don't need to be scared of opinionated "boom" messages..or maybe you have to depending on the School 42 current subject.
 
-* [libft-war-machine](https://github.com/ska42/libft-war-machine)
+Later on, I decided that I needed (for some unexplicable reason) to learn how to write unit tests in C and this project seems to me like a perfect candidate to start with. I picked [Check](https://libcheck.github.io/check/) framework because it is:
 
-It is normal (!) if some of your functions are not protected.
+- installable via `sudo apt install check` (see the [Installing Check](https://libcheck.github.io/check/web/install.html) section for more details);
+- simple enough and has some documentation and even tutorials: [basic](https://libcheck.github.io/check/doc/check_html/check_3.html) and [advanced](https://libcheck.github.io/check/doc/check_html/check_4.html#Advanced-Features) + not so-long [API reference](https://libcheck.github.io/check/doc/doxygen/html/check_8h.html);
+- advised/required (?) at School 21.
+
+So, if you are a student or an "intern" at School 21 or 42, you might want to use the "Check" framework in your C projects. Tests are available in the [c/tests](./c/tests) directory. Tests are not organised according to best practices, so please don't expect them to be idiomatic and well-structured. **Disclaimer**: I had and have no eagerness to provide full coverage for this project in C, only functions or data structures of interest that was enough **for me** to master "Check" to some basic level.
+
+### Related 42cursus projects
+
+My other 42cursus projects in C that are available on GitHub (and maybe will be "Check"ed):
+
+- [get-next-line](https://github.com/stankudrow/get_next_line)
+- [ft_printf](https://github.com/stankudrow/ft_printf)
+
+Other projects may be published without C-code, because programming in C is tiresome compparable to walking across minefields with occasional reinvention of wheels and other stuff, not mentioning mental fatigue (IMHO).
