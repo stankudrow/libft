@@ -13,7 +13,7 @@ fn ft_islower(c: u8) -> bool {
     c.is_ascii_lowercase() // and this makes clippy happy
 }
 
-// The following macro will suppress the complain from `cargo clippy`
+// The following macro will suppress the complaint from `cargo clippy`
 #[allow(clippy::char_lit_as_u8)]
 fn ft_isupper(c: u8) -> bool {
     // explicit type casting via `obj as %type%`
@@ -39,7 +39,7 @@ pub fn ft_isdigit(c: u8) -> bool {
     return c >= b'0' && c <= ('9' as u8);
 }
 
-#[allow(clippy::needless_return)]
+#[allow(clippy::needless_return)] // but I need this return for demo purpose :)
 pub fn ft_isprint(c: u8) -> bool {
     return c > 31 && c < 127; // not disallowed, why not `return` redundantly
 }
