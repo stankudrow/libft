@@ -1,12 +1,4 @@
-// `pub mod XXX;`
-// `mod`ule (file) XXX is claimed to exist.
-// `pub` makes this module public, i.e. visible from the outside.
-
 pub mod ft_chr;
-
-// `use %smth%` = import smth
-// `pub use %smth%` = this import becomes public
-// such a public import is viable as `libft::smth`, see test files
 
 pub use ft_chr::ft_isalnum;
 pub use ft_chr::ft_isalpha;
