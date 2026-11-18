@@ -1,14 +1,21 @@
-// `pub` = public -> is visible from outside this module.
-// Without pub this function would have been private.
+// s is an immutable pointer to a string -> no need for const qualifier
 pub fn ft_strlen(s: &str) -> usize {
-    // &str in Rust is UTF-8
-    // For ASCII string, `s.len() == s.chars().count()`
-    // C-strlen is about chars as bytes, that is why `s.as_bytes()`
+    assert!(s.is_ascii(), "expected ASCII-string only");
+    s.len()
+}
 
-    // return s.len(); // return is possible, but redundant
-    s.len() // no semicolon here!!!
+pub fn ft_strchr(s: &str, c: u8) -> Option<&str> {
+    assert!(s.is_ascii(), "expected ASCII-string only");
+    if c == b'\0' {
+        return Some(&s[s.len()..]);
+    }
+    match s.as_bytes().iter().position(|&b| b == c) {
+        Some(i) => Some(&s[i..]),
+        None => None,
+    }
+}
 
-    // In a function, the last expression is returned automatically
-    // If the last expression is followed by a semicolon,
-    // then it becomes a statement/instruction that returns nothing (semicolon silences).
+pub fn ft_strdup(s: &str) -> String {
+    assert!(s.is_ascii(), "expected ASCII-string only");
+    String::from(s)
 }
